@@ -4,6 +4,7 @@ const http = require('http');
 const server = require('./server');
 
 const { port } = require('./config').server;
+const db = require('./models/index');
 
 async function bootstrap() {
   /**
