@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const Router = require('koa-router');
+const db = require('../models/index')
 
 const { apiVersion } = require('../config').server;
 const baseName = path.basename(__filename);
