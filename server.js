@@ -8,7 +8,7 @@ const logger = require('koa-logger')();
 const errorHandler = require('./middleware/error.middleware');
 const applyApiMiddleware = require('./api');
 const { isDevelopment } = require('./config');
-
+const db = require('./models/index');
 const server = new Koa();
 
 /**
@@ -32,5 +32,7 @@ server
  * Apply to our server the api router
  */
 applyApiMiddleware(server);
+
+server.context.db = db;
 
 module.exports = server;
